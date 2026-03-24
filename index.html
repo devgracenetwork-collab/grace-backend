@@ -3,141 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grace Dignity Network • Pieters & Co</title>
+  <title>Grace Dignity Network</title>
   <link rel="stylesheet" href="assets/css/pieters-style.css">
   <style>
     .hero {
-      background: linear-gradient(rgba(15,23,42,0.92), rgba(15,23,42,0.92)), 
-                  url('https://source.unsplash.com/random/1600x900/?ocean,proteas') center/cover no-repeat;
+      background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url('assets/grace.jpg');
+      background-size: cover;
+      background-position: center;
       color: white;
       text-align: center;
-      padding: 120px 20px 90px;
-      border-radius: var(--radius-2xl);
-      margin-bottom: 4rem;
+      padding: 140px 20px 100px;
     }
-    .hero h1 { font-size: 3.5rem; color: var(--color-gold); }
-
-    .agent-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2.5rem;
-      margin: 4rem 0;
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
     }
-
-    .image-container {
-      width: 100%;
-      aspect-ratio: 2 / 3;
-      border-radius: var(--radius-2xl);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
+    .hero p {
+      font-size: 24px;
+      max-width: 800px;
+      margin: 0 auto 40px;
     }
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 18%;
-    }
-
-    .hero-whatsapp {
+    .whatsapp-btn {
       background-color: #25D366;
       color: white;
-      border: none;
-      border-radius: var(--radius-2xl);
-      padding: 1.1rem 2.8rem;
-      font-size: 1.25rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
+      padding: 16px 36px;
+      font-size: 20px;
+      border-radius: 50px;
       text-decoration: none;
-      margin-top: 2rem;
-      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+      display: inline-block;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
     }
-    .hero-whatsapp:hover {
-      background-color: #128C7E;
-      transform: translateY(-3px);
+    .agents {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 80px;
+    }
+    .agent-card {
+      background: white;
+      border-radius: 16px;
+      width: 320px;
+      padding: 25px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .agent-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-  <nav style="background: var(--color-primary); padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; color: white;">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <img src="assets/gdnlogo.png" alt="Pieters & Co" style="height: 48px;">
-        <span style="font-size: 1.4rem; color: var(--color-gold);">Grace Dignity Network</span>
-      </div>
-      <div>
-        <a href="index.html" style="color: white; margin: 0 1.2rem; text-decoration: none;">Home</a>
-        <a href="about.html" style="color: white; margin: 0 1.2rem; text-decoration: none;">About Us</a>
-        <a href="other-services.html" style="color: white; margin: 0 1.2rem; text-decoration: none;">Other Services</a>
-      </div>
-    </div>
-  </nav>
+  <header>
+    <div class="logo">Grace Dignity Network</div>
+  </header>
 
-  <div style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
-
-    <div class="hero">
-      <h1>Grace</h1>
-      <p style="font-size: 1.45rem; max-width: 720px; margin: 0 auto 2rem;">
-        Your warm, professional first point of contact.<br>
-        I meets every family with care and guides you gently through the entire process.
-      </p>
-      <a href="https://wa.me/27XXXXXXXXX?text=Hello%20Grace%2C%20I%27m%20reaching%20out%20about%20a%20loved%20one%20who%20has%20passed.%20Please%20help." 
-         target="_blank" 
-         class="hero-whatsapp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" 
-             alt="WhatsApp" 
-             style="width: 28px; height: 28px; filter: brightness(0) invert(1);">
-        Message Grace on WhatsApp Now
-      </a>
-    </div>
-
-    <div class="agent-grid">
-
-      <div class="card">
-        <div class="image-container">
-          <img src="assets/grace.jpg" alt="Grace">
-        </div>
-        <div style="padding: 2rem;">
-          <h2 style="color: var(--color-primary);">Grace</h2>
-          <p class="protea-accent" style="font-weight: 600; font-size: 1.1rem; margin: 0.5rem 0 1rem;">Intake & First Support</p>
-          <p style="color: var(--text-secondary);">Grace handles every first conversation with empathy and clarity.</p>
-          
-          <div class="button-container" style="margin-top: 2rem;">
-            <a href="https://wa.me/27XXXXXXXXX?text=Hello%20Grace..." 
-               target="_blank" 
-               class="btn-primary" 
-               style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" 
-                   alt="WhatsApp" 
-                   style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
-              Message Grace on WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="image-container">
-          <img src="assets/victor.jpg" alt="Victor">
-        </div>
-        <div style="padding: 2rem;">
-          <h2 style="color: var(--color-primary);">Victor</h2>
-          <p class="protea-accent" style="font-weight: 600; font-size: 1.1rem; margin: 0.5rem 0 1rem;">Logistics & Dispatch</p>
-          <p style="color: var(--text-secondary);">Victor coordinates removals and logistics so everything happens respectfully and on time.</p>
-        </div>
-      </div>
-
-    </div>
-
+  <div class="hero">
+    <h1>Dignity When It Matters Most</h1>
+    <p>Grace is here 24/7 — calm, caring, and ready to guide you gently through the first difficult steps.</p>
+    <a href="#" class="whatsapp-btn">Message Grace on WhatsApp</a>
   </div>
 
-  <footer style="background: var(--color-primary); color: white; text-align: center; padding: 3rem 1rem; margin-top: 6rem;">
-    <p>&copy; © 2026 Grace Dignity Network (Pty) Ltd. All rights reserved.  
+  <div class="section">
+    <h2>Meet Grace & Victor</h2>
+    <div class="agents">
+      <div class="agent-card">
+        <img src="assets/grace.jpg" alt="Grace">
+        <h3>Grace</h3>
+        <p>Your first point of gentle support. Warm, professional, and here to listen and guide with dignity.</p>
+      </div>
+      <div class="agent-card">
+        <img src="assets/victor.jpg" alt="Victor">
+        <h3>Victor</h3>
+        <p>Logistics and dispatch. He coordinates with trusted funeral homes so you don’t have to carry the burden alone.</p>
+      </div>
+    </div>
+  </div>
 
-This work is confidential and proprietary. Unauthorized copying, distribution, or use is strictly prohibited.  
-Created by Barend Pieters.</p>
+  <footer>
+    © 2026 Grace Dignity Network (Pty) Ltd / Pieters & Co (Pty) Ltd<br>
+    All rights reserved. Confidential.
   </footer>
 
 </body>
