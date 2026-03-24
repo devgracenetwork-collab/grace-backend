@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Other Services • Grace Dignity Network</title>
+  <link rel="stylesheet" href="assets/css/pieters-style.css">
+  <style>
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--color-primary);
+      margin: 5rem 0 2rem;
+      font-size: 2.2rem;
+    }
+
+    .image-container {
+      height: 340px;
+      overflow: hidden;
+      border-top-left-radius: var(--radius-2xl);
+      border-top-right-radius: var(--radius-2xl);
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 20%;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card-content {
+      padding: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav style="background: var(--color-primary); padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; color: white;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="assets/gdnlogo.png" alt="Pieters & Co" style="height: 48px;">
+        <span style="font-size: 1.4rem; color: var(--color-gold);">Grace Dignity Network</span>
+      </div>
+      <div>
+        <a href="index.html" style="color: white; margin: 0 1.2rem; text-decoration: none;">Home</a>
+        <a href="about.html" style="color: white; margin: 0 1.2rem; text-decoration: none;">About Us</a>
+        <a href="other-services.html" style="color: var(--color-gold); margin: 0 1.2rem; text-decoration: none;">Other Services</a>
+      </div>
+    </div>
+  </nav>
+
+  <div style="max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem;">
+    <h1 style="text-align: center; color: var(--color-primary);">Other Services</h1>
+    <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 3rem;">
+      Grace Dignity Network offers a focused suite of services to support families and legitimate funeral partners across South Africa.
+    </p>
+
+    <!-- Core Products (Client-Facing) -->
+    <h2 class="section-title">Core Products</h2>
+    <div class="services-grid">
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/thearchitect.jpg" alt="The Architect">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">The Architect</h3>
+          <p class="protea-accent" style="font-weight: 600;">Partner Portal</p>
+          <p style="margin: 1.5rem 0;">Secure web portal for funeral homes and consultants. Full arrangements, pricing control, receipts and case management.</p>
+          <a href="https://thearchitect.org.za" target="_blank" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Access The Architect</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/legacyvault.jpg" alt="LegacyVault">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">LegacyVault</h3>
+          <p class="protea-accent" style="font-weight: 600;">Family Memory Vault</p>
+          <p style="margin: 1.5rem 0;">R25/month secure storage for photos, stories, videos and memories — preserved forever with dignity.</p>
+          <a href="#" onclick="alert('LegacyVault subscription page coming soon'); return false;" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Subscribe Now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/certiguard.jpg" alt="CertiGuard">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">CertiGuard</h3>
+          <p class="protea-accent" style="font-weight: 600;">Blockchain Death Certificates</p>
+          <p style="margin: 1.5rem 0;">Secure, permanent digital death certificates — instantly verifiable and shareable.</p>
+          <a href="#" onclick="alert('CertiGuard details coming soon'); return false;" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Customer-Facing AI Agents -->
+    <h2 class="section-title">Customer-Facing AI Agents</h2>
+    <div class="services-grid">
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/serena.jpg" alt="Serena">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">Serena</h3>
+          <p class="protea-accent" style="font-weight: 600;">Calm Grief Companion</p>
+          <p>Ongoing emotional support and gentle guidance for families after the initial arrangements.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/clara.jpg" alt="Clara">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">Clara</h3>
+          <p class="protea-accent" style="font-weight: 600;">Policy Sales</p>
+          <p>Our own R50,000 underwritten funeral policies – simple, reliable cover for families.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/priya.jpg" alt="Priya">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">Priya</h3>
+          <p class="protea-accent" style="font-weight: 600;">Client Relations</p>
+          <p>Professional, caring relationship management and follow-up for families.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- For Partners -->
+    <h2 class="section-title">For Partners</h2>
+    <div class="services-grid">
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/marcus.jpg" alt="Marcus">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">Marcus</h3>
+          <p class="protea-accent" style="font-weight: 600;">Compliance Guardian</p>
+          <p>Tracks vaccination & OHSA records, weekly legislation updates (SARS, UIF, Workmen’s Compensation, Dept of Health & Labour).</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/elena.jpg" alt="Elena">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">Elena</h3>
+          <p class="protea-accent" style="font-weight: 600;">Regulatory Guardian</p>
+          <p>Ensures policy terms & conditions comply with FCA, FICA, TCF and all legal standards.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/damian.jpg" alt="Damian">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">Damian</h3>
+          <p class="protea-accent" style="font-weight: 600;">Exhumations Specialist</p>
+          <p>Handles partner-facing exhumation processes with care and compliance.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/isabella.jpg" alt="Isabella">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">Isabella</h3>
+          <p class="protea-accent" style="font-weight: 600;">Repatriations Specialist</p>
+          <p>Manages partner-facing repatriation coordination.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="image-container">
+          <img src="assets/liora.jpg" alt="Liora">
+        </div>
+        <div class="card-content">
+          <h3 style="color: var(--color-primary);">Liora</h3>
+          <p class="protea-accent" style="font-weight: 600;">Analytics Specialist</p>
+          <p>Provides partners with business analytics and performance insights.</p>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <footer style="background: var(--color-primary); color: white; text-align: center; padding: 3rem 1rem; margin-top: 6rem;">
+    <p>&copy; © 2026 Grace Dignity Network (Pty) Ltd. All rights reserved.  
+
+This work is confidential and proprietary. Unauthorized copying, distribution, or use is strictly prohibited.  
+Created by Barend Pieters.</p>
+  </footer>
+
+</body>
+</html>
