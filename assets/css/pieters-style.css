@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Pieters & Co – Navy & Gold Theme
+   ========================================================================== */
+   
+/* CSS Variables – Navy + Gold Palette */
+:root {
+  /* Primary Navy – trust, dignity, calm authority */
+  --color-primary: #0f172a;           /* deep navy */
+  --color-primary-light: #1e3a5f;     /* lighter navy for hovers */
+  --color-primary-dark: #0a1320;      /* darker navy */
+
+  /* Gold accent – premium, warm, South African elegance */
+  --color-gold: #f6e4ab;              /* warm gold */
+  --color-gold-light: #e8d070;        /* lighter gold */
+
+  /* Backgrounds & surfaces */
+  --color-background: #f8f5f0;        /* soft warm cream */
+  --color-surface: #ffffff;           /* clean white cards */
+  --color-border: #d1c7b8;            /* warm taupe border */
+
+  /* Text */
+  --text-primary: #0f172a;            /* deep navy text */
+  --text-secondary: #475569;          /* slate grey */
+  --text-muted: #64748b;              /* muted slate */
+
+  /* States */
+  --color-success: #166534;           /* deep green */
+  --color-warning: #854d0e;           /* warm amber */
+
+  /* Shadows & radius */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.1);
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+/* Global resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--color-background);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: Georgia, serif;
+}
+
+/* Buttons – HIGH CONTRAST (navy + gold) */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-gold);
+  border: none;
+  border-radius: var(--radius-2xl);
+  padding: 1rem 2.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Flip cards */
+.flip-card {
+  perspective: 1000px;
+  height: 420px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Agent images */
+.agent-img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Utilities */
+.protea-accent { color: var(--color-gold); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.bg-surface { background-color: var(--color-surface); }
+.bg-background { background-color: var(--color-background); }
+.border-light { border-color: var(--color-border); }
+
+/* Alerts */
+.alert-success { background: rgba(var(--color-success), 0.1); border-color: var(--color-success); }
+.alert-warning { background: rgba(var(--color-warning), 0.1); border-color: var(--color-warning); }
+
+/* Print */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; color: black; }
+}
