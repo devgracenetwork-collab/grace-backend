@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grace • Pieters & Co – Full Demo</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .phone-frame {
+      width: 380px;
+      height: 780px;
+      background: #000;
+      border-radius: 60px;
+      padding: 20px 10px;
+      box-shadow: 0 0 60px rgba(0,0,0,0.9);
+      position: relative;
+      overflow: hidden;
+    }
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 28px;
+      background: #111;
+      border-radius: 20px;
+      z-index: 2;
+    }
+    .whatsapp-header {
+      background: #075E54;
+      color: white;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .whatsapp-header img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid #25D366;
+    }
+    .chat-container {
+      height: calc(100% - 130px);
+      overflow-y: auto;
+      padding: 20px 16px;
+      background: #E5DDD5 url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.jpg') repeat;
+      background-size: contain;
+    }
+    .message {
+      max-width: 78%;
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      border-radius: 18px;
+      line-height: 1.4;
+      font-size: 15px;
+      word-wrap: break-word;
+    }
+    .received {
+      background: white;
+      color: #111;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+    .sent {
+      background: #D9FDD3;
+      color: #111;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .typing {
+      font-style: italic;
+      color: #666;
+      font-size: 13px;
+      margin: 10px 0;
+      align-self: flex-start;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .option-btn {
+      background: #075E54;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone-frame">
+    <div class="whatsapp-header">
+      <img src="assets/grace.jpg" alt="Grace">
+      <div>
+        <strong>Grace • Pieters & Co</strong><br>
+        <small>Always here 24/7 • Dignity Assistant</small>
+      </div>
+    </div>
+
+    <div class="chat-container" id="chat"></div>
+  </div>
+
+  <script>
+    const chat = document.getElementById('chat');
+
+    function addMessage(text, type) {
+      const div = document.createElement('div');
+      div.className = `message ${type}`;
+      div.textContent = text;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function addTyping(delayMs = 2000) {
+      const typing = document.createElement('div');
+      typing.className = 'typing';
+      typing.textContent = 'Grace is typing...';
+      chat.appendChild(typing);
+      chat.scrollTop = chat.scrollHeight;
+      await new Promise(resolve => setTimeout(resolve, delayMs));
+      typing.remove();
+    }
+
+    async function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function simulateGraceResponse(text, typingDelay = 1800, pauseAfter = 1200) {
+      await addTyping(typingDelay);
+      await delay(pauseAfter);
+      addMessage(text, "received");
+    }
+
+    async function startConversation() {
+      await delay(800);
+      addMessage("Good day, this is Grace from Grace Dignity Network. I'm so sorry for your loss or the difficult situation you're facing.", "received");
+      await delay(2000);
+
+      await simulateGraceResponse("I'm here 24/7 to help you with warmth, care and dignity. How can I assist you today?", 2200, 1500);
+      await delay(1200);
+
+      addMessage("Please choose one of the options below so I can guide you gently:", "received");
+      await delay(1000);
+
+      const optionsDiv = document.createElement('div');
+      optionsDiv.className = 'options';
+      optionsDiv.innerHTML = `
+        <button class="option-btn" onclick="runFullDemo(1)">1. I have experienced a loss and need immediate assistance</button>
+        <button class="option-btn" onclick="runFullDemo(2)">2. Someone passed away but I have questions first</button>
+        <button class="option-btn" onclick="runFullDemo(3)">3. General question</button>
+        <button class="option-btn" onclick="runFullDemo(4)">4. I don't know where to start</button>
+        <button class="option-btn" onclick="runFullDemo(5)">5. Other</button>
+      `;
+      chat.appendChild(optionsDiv);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    window.runFullDemo = async function(option) {
+      // Hide buttons
+      document.querySelector('.options').remove();
+
+      addMessage(`Option ${option} selected (demo)`, "sent");
+      await delay(1800);
+
+      await simulateGraceResponse("I'm so sorry you're going through this. I'm here with you. May I please start with your name so I can address you properly?", 2200, 1800);
+
+      await delay(3000); // Simulate human typing time
+      addMessage("Benn Pieters (demo)", "sent");
+
+      await delay(1800);
+      await simulateGraceResponse("Thank you, Benn. May I now ask for the name of the person who has passed away?", 2000, 1500);
+
+      await delay(3200);
+      addMessage("John Smith", "sent");
+
+      await delay(2000);
+      await simulateGraceResponse("I'm so sorry about John. Could you tell me the date and approximate time of passing?", 2200, 1600);
+
+      await delay(3400);
+      addMessage("2026-03-15 at around 14:30", "sent");
+
+      await delay(2000);
+      await simulateGraceResponse("Thank you. Was the passing due to natural causes (such as illness) or something unexpected (accident, fall, etc.)?", 2500, 1800);
+
+      await delay(3800);
+      addMessage("Natural causes – long illness", "sent");
+
+      await delay(2200);
+      await simulateGraceResponse("Understood. Where did the passing occur? (Home, Hospital, or State Mortuary?)", 2200, 1600);
+
+      await delay(3000);
+      addMessage("Home", "sent");
+
+      await delay(1800);
+      await simulateGraceResponse("Thank you. May I have the full address of the home so we can coordinate respectfully?", 2000, 1400);
+
+      await delay(3200);
+      addMessage("123 Acacia Road, Durban North", "sent");
+
+      await delay(2000);
+      await simulateGraceResponse("Are you the next of kin, Benn?", 1800, 1200);
+
+      await delay(2800);
+      addMessage("Yes – I am the spouse", "sent");
+
+      await delay(1800);
+      await simulateGraceResponse("Thank you. Have you or the family considered organ or tissue donation? This is a gentle question – there is no pressure at all.", 2800, 2000);
+
+      await delay(4000);
+      addMessage("No, we have not", "sent");
+
+      await delay(2200);
+      await simulateGraceResponse("Understood, that's completely fine. Who was the doctor who looked after John?", 2000, 1400);
+
+      await delay(3000);
+      addMessage("Dr. Patel at St. Augustine's", "sent");
+
+      await delay(2000);
+      await simulateGraceResponse("Thank you for sharing everything so patiently, Benn. I have all the details now and will pass them to Victor to coordinate collection respectfully.", 3000, 2200);
+
+      await delay(2500);
+      addMessage("Victor has confirmed with a partner funeral home on the GDN network. They will contact you shortly for next steps.", "received");
+
+      await delay(2200);
+      addMessage("This is Grace following up after 2 weeks. I hope you and your family are doing okay. Is there anything we can still assist with?", "received");
+
+      await delay(3000);
+      addMessage("Grace is always available 24/7 if you ever need to talk again. Thank you for trusting us with this sacred responsibility.", "received");
+
+      await delay(2500);
+      addMessage("With deepest respect, Grace", "received");
+    };
+
+    // Start automatically
+    window.onload = async () => {
+      await delay(1000);
+      addMessage("Good day, this is Grace from Grace Dignity Network. I'm so sorry for your loss or the difficult situation you're facing.", "received");
+      await delay(2200);
+
+      await simulateResponse("I'm here 24/7 to help you with warmth, care and dignity. How can I assist you today?", 2500, 1800);
+      await delay(1400);
+
+      addMessage("Please choose one of the options below so I can guide you gently:", "received");
+      await delay(1200);
+
+      const optionsDiv = document.createElement('div');
+      optionsDiv.className = 'options';
+      optionsDiv.innerHTML = `
+        <button class="option-btn" onclick="runFullDemo(1)">1. I have experienced a loss and need immediate assistance</button>
+        <button class="option-btn" onclick="runFullDemo(2)">2. Someone passed away but I have questions first</button>
+        <button class="option-btn" onclick="runFullDemo(3)">3. General question</button>
+        <button class="option-btn" onclick="runFullDemo(4)">4. I don't know where to start</button>
+        <button class="option-btn" onclick="runFullDemo(5)">5. Other</button>
+      `;
+      chat.appendChild(optionsDiv);
+      chat.scrollTop = chat.scrollHeight;
+    };
+
+    function simulateResponse(text, typingDelay, pauseAfter) {
+      return new Promise(async resolve => {
+        await addTyping(typingDelay);
+        await delay(pauseAfter);
+        addMessage(text, "received");
+        resolve();
+      });
+    }
+  </script>
+</body>
+</html>
